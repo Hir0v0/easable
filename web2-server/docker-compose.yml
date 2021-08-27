@@ -1,0 +1,22 @@
+
+version: '3'
+
+services:
+  web2-server:
+    image: nginx
+    restart: always
+    container_name: 'web2-container'
+    volumes:
+      - ./web2-server:/usr/share/nginx/html
+    ports:
+      - 7001:80
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+
+
+
+
+

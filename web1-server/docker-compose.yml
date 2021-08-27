@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web1-server:
+    image: nginx
+    restart: always
+    container_name: 'web1-container'
+    volumes:
+      - ./web1-server:/usr/share/nginx/html
+    ports:
+      - 7000:80
+    
+networks:
+  default:
+    external:
+      name: nginx-proxy
